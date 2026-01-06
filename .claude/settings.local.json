@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker logs:*)",
+      "Bash(.\\\\mvnw spring-boot:run:*)",
+      "Bash(./mvnw spring-boot:run:*)",
+      "Bash(docker exec:*)"
+    ]
+  }
+}
