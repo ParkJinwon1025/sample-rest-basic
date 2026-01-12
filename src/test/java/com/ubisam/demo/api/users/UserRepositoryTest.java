@@ -15,6 +15,7 @@ public class UserRepositoryTest {
     @Test
 	void contextLoads() {
 
+        // Update, Delete 추가
         User u1 = new User();
         u1.setName("Alice");
         userRepository.save(u1);
