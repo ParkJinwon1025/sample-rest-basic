@@ -21,3 +21,11 @@ docker-compose up -d
 docker-compose down 
 ```
 
+1. 삭제
+
+2. 등록
+
+3. 조회
+
+-- test랑 메인이랑 
+    '>'화살표 클릭 = .\mvnw spring-boot:run

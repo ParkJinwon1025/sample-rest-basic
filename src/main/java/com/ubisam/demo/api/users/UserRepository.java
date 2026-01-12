@@ -1,4 +1,4 @@
-package com.ubisam.api.users;
+package com.ubisam.demo.api.users;
 import com.ubisam.demo.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
