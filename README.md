@@ -1,15 +1,37 @@
-# com.ubisam.persons.parkjinwon3
+# sample-rest-basic
 
-## 1. Maven 프로젝트 + Docker 컨테이너 실행 (세미나 이전)
+## 1. 프로젝트 생성
+
+1. `Visual Studio Code` 실행
+
+2. `Ctrl`+`Shift`+`P` 입력
+
+3. `Spring Initializr: Create a Maven Project` 클릭
+
+4. 계속 엔터
+
+5. `dependencies` 선택
+    - Lombok
+    - Rest Repositories
+    - HYperSQL Database SQL
+    - Spring Data JPA
+
+
+## 2-1. Maven 프로젝트 + Docker 컨테이너 실행 (세미나 이전)
 
 1. `docker Desktop` 실행
 
-2. `.jar` 파일 생성 명령어 실행
+2. Git Clone
+``` bash
+git clone https://github.com/ParkJinwon1025/sample-rest-basic.git
+```
+
+3. `.jar` 파일 생성 명령어 실행
 ``` bash
 .\mvnw clean package -DskipTests 
 ```
 
-3. `docker-compose` 프로그램 실행
+4. `docker-compose` 프로그램 실행
 ```bash
 # DB 결과 확인하려면 DBeaver도 켜야함.
 docker-compose up -d
@@ -31,7 +53,7 @@ docker-compose down
 ---
 ---
 
-## 1. Maven 프로젝트 + Docker 컨테이너 실행 (세미나 이후)
+## 2-2. Maven 프로젝트 + Docker 컨테이너 실행 (세미나 이후)
 
 1. `docker Desktop` 실행
 
