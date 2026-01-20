@@ -4,44 +4,45 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.ubisam.demo.domain.Computer;
+import com.ubisam.demo.api.monitors.MonitorRepository;
+import com.ubisam.demo.domain.Monitor;
 
 @SpringBootTest
 public class ComputerRepositoryTest {
 
     @Autowired
-    private ComputerRepository computerRepository;
+    private MonitorRepository monitorRepository;
 
     @Test
     void contextLoads() {
 
         // Create
-        Computer c1 = new Computer();
-        c1.setName("window");
-        computerRepository.save(c1);
+        Monitor m1 = new Monitor();
+        m1.setName("Samsung");
+        monitorRepository.save(m1);
 
-        Computer c2 = new Computer();
-        c2.setName("MAC");
-        computerRepository.save(c2);
+        Monitor m2 = new Monitor();
+        m2.setName("LG");
+        monitorRepository.save(m2);
 
         // Read
-        Object findAll = computerRepository.findAll();
+        Object findAll = monitorRepository.findAll();
         System.out.println("Find All: " + findAll);
 
-        Object findById = computerRepository.findById(c2.getId());
-        System.out.println("Find Computer with ID  :"+ c2.getId() + " : " + findById);
+        Object findById = monitorRepository.findById(m2.getId());
+        System.out.println("Find Monitor with ID " + m2.getId() + " : " + findById);
 
         // Update
-        c2.setName("Linux");
-        Object setName = computerRepository.save(c2);
-        System.out.println("Update Computer with ID " + c2.getId() + ": " + setName);
+        m2.setName("Dell");
+        Object updated = monitorRepository.save(m2);
+        System.out.println("Update Monitor with ID " + m2.getId() + ": " + updated);
 
         // Delete
-        System.out.println("Delete Computer with ID " + c2.getId() + ": " + setName);
-        computerRepository.deleteById(c2.getId());
-        Object finalResult = computerRepository.findAll();
-        System.out.println("Final Result: " + finalResult);
+        System.out.println("Delete Monitor with ID " + m2.getId());
+        monitorRepository.deleteById(m2.getId());
 
+        Object finalResult = monitorRepository.findAll();
+        System.out.println("Final Result: " + finalResult);
     }
-    
+
 }
