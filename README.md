@@ -61,16 +61,22 @@ docker-compose down
 ```bash
 # MySQL
 docker pull mysql:9.5.0
+
+# 컨테이너 실행
 docker run --name=mydata -p 3306:3306 -v C:/Users/USER/Documents/dockerdata/mysql1:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=docker123 -d mysql:9.5.0
 ```
+
 ```bash
 # PostgreSQL
 docker pull postgres:latest
 
+# 컨테이너 실행(postgres 버전 =< 17)
 docker run --name postgres-db -p 5432:5432 -v C:/Users/USER/Documents/dockerdata/mysql1:/var/lib/postgresql/data -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=rest -d postgres:latest
+
+# 컨테이너 실행(postgres 버전 <= 18)
 docker run --name postgres -p 5432:5432 -v C:/Users/USER/Documents/dockerdata/postsend:/var/lib/postgresql -e POSTGRES_PASSWORD=1234 -d postgres:latest
-=> 폴더 구조 잘봐야함 / 압축할 떄 
 ``` 
+
 ```bash
 # MSSQL
 docker pull mcr.microsoft.com/mssql/server:2025-latest
@@ -80,6 +86,9 @@ docker run -d --name mssql -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=msSQL1234!" 
 
 # BackUp 파일 만들기
 docker exec -it mssql /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "msSQL1234!" -Q "BACKUP DATABASE [MyDb] TO DISK = N'/var/opt/mssql/backup/MyDb.bak' WITH INIT, COMPRESSION" -C
+
+# 컨테이너 실행
+docker run -d --name mssql2025 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test1234!" -p 1433:1433 -v C:/Users/USER/Documents/dockerdata/mssqlsend:/var/opt/mssql mcr.microsoft.com/mssql/server:2025-latest
 
 
 3. 터미널에서 Spring Boot 애플리케이션 실행
