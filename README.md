@@ -93,7 +93,7 @@ docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=1234 -v C:/Users/US
 docker pull mcr.microsoft.com/mssql/server:2025-latest
 
 # 컨테이너 실행 (기본 설정)
-docker run --name mssql2025 -p 1433:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test1234!" -v C:/Users/USER/Documents/dockerdata/mssqlsend/data:/var/opt/mssql/data -v C:/Users/USER/Documents/dockerdata/mssqlsend/backup:/var/opt/mssql/backup -d mcr.microsoft.com/mssql/server:2022-latest
+docker run --name mssql2025 -p 1433:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test1234!" -v C:/Users/USER/Documents/dockerdata/mssql/data:/var/opt/mssql/data -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
 3. 터미널에서 Spring Boot 애플리케이션 실행
