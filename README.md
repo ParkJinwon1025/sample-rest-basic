@@ -96,6 +96,15 @@ docker pull mcr.microsoft.com/mssql/server:2025-latest
 docker run --name mssql2025 -p 1433:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test1234!" -v C:/Users/USER/Documents/dockerdata/mssql:/var/opt/mssql/data -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
+**MariaDb**
+```bash
+# 이미지 다운로드 
+docker pull mariadb:noble
+
+# 컨테이너 실행
+docker run --name maria -p 3306:3306 -v C:/Users/USER/Documents/dockerdata/maria:/var/lib/mysql:Z -e MARIADB_ROOT_PASSWORD=Test1234! -d mariadb:latest
+```
+
 3. 터미널에서 Spring Boot 애플리케이션 실행
 ```bash
 # test 폴더에서는 '>' 화살표 클릭과 동일함.
